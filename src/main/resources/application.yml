@@ -1,0 +1,7 @@
+Spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/book_store
+    username: hubert
+    password: hubert
+
+
