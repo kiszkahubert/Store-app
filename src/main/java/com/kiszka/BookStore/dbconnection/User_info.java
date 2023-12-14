@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED,force = true)
+@NoArgsConstructor(force = true)
 public class User_info {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

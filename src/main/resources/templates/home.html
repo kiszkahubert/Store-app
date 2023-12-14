@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Available Books</title>
+    <link rel="stylesheet" th:href="@{/homestyle.css}">
 </head>
 <body>
     <div th:each="book : ${books}">
-        <h1 th:text="${book.id_book}"></h1>
         <h1 th:text="${book.book_name}"></h1>
-        <h1 th:text="${book.quantity}"></h1>
         <h1 th:text="${book.description}"></h1>
+        <p class="quantity">Available books : <span th:text="${book.quantity}"></span></p>
+    </div>
+    <div th:if="${totalPages > 1}">
+        <ul class="pagination">
+            <li th:each="i : ${#numbers.sequence(0, totalPages - 1)}">
+                <a th:href="@{'/books?page=' + ${i}}" th:text="${i}" th:class="${currentPage == i} ? 'active' : ''"></a>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
